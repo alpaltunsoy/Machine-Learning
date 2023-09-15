@@ -9,19 +9,20 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-veriler = pd.read_csv("sales.csv")
-print(veriler)
+#importing datas
+datas = pd.read_csv("sales.csv")
+print(datas)
 
-aylar  = veriler[["Aylar"]]
-satislar  = veriler[["Satislar"]]
+months  = datas[["Aylar"]]
+sales  = datas[["Satislar"]]
 
-print(aylar)
-print(satislar)
+print(months)
+print(sales)
 
 
 from sklearn.model_selection import train_test_split
 #aylar bağımsız satışlar bağımlı değişken ona göre yerleştirmek önemli
-x_train, x_test, y_train, y_test = train_test_split(aylar, satislar, test_size = 0.33)
+x_train, x_test, y_train, y_test = train_test_split(months, sales, test_size = 0.33)
 
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
@@ -38,16 +39,16 @@ from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
 
 lr.fit(X_train, Y_train)
-tahmin = lr.predict(X_test)
+predict = lr.predict(X_test)
 
 lr.fit(x_train, y_train)
-tahmin2 = lr.predict(x_test)
+predict_2 = lr.predict(x_test)
 
 x_train = x_train.sort_index()
 y_train = y_train.sort_index()
 
 plt.plot(x_train, y_train) 
-plt.plot(x_test, tahmin2)
+plt.plot(x_test, predict_2)
 
 plt.xlabel("Aylar")
 plt.ylabel("Satışlar")
