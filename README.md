@@ -5,7 +5,18 @@ My machine learning repo there are some useful scripts inside
 
 ## Information
 
-Linear regression models
+These are my machine learning repository you can find some templates and algorithms and some useful examples
+Every next example is more complicated than before
+
+-Prediction Templates and Examples (Including Plots and r2_score)
+
+⚫ Linear, Multi,Polynomial, Support Vector Regression
+⚫ Decision Trees and Random Forest Regressor
+⚫ Examples
+
+
+
+
 
 
 ## Contributing
